@@ -2,8 +2,8 @@
 
 declare class MemBlobs implements MemBlobs.AbstractBlobStore {
   data: {[key: string]: any}
-  createWriteStream(opts: MemBlobs.BlobKey, callback: MemBlobs.CreateCallback): NodeJS.WriteStream
-  createReadStream(opts: MemBlobs.BlobKey): NodeJS.ReadStream
+  createWriteStream(opts: MemBlobs.BlobKey, callback: MemBlobs.CreateCallback): NodeJS.WriteableStream
+  createReadStream(opts: MemBlobs.BlobKey): NodeJS.ReadableStream
   exists(opts: MemBlobs.BlobKey, callback: MemBlobs.ExistsCallback): void
   remove(opts: MemBlobs.BlobKey, callback: MemBlobs.RemoveCallback): void
 }
@@ -15,8 +15,8 @@ declare namespace MemBlobs {
   type ExistsCallback = (error: Error | null, exists: boolean) => void
   type RemoveCallback = (error: Error | null) => void
   interface AbstractBlobStore {
-    createWriteStream(opts: BlobKey, callback: CreateCallback): NodeJS.WriteStream
-    createReadStream(opts: BlobKey): NodeJS.ReadStream
+    createWriteStream(opts: BlobKey, callback: CreateCallback): NodeJS.WritableStream
+    createReadStream(opts: BlobKey): NodeJS.ReadableStream
     exists(opts: BlobKey, callback: ExistsCallback): void
     remove(opts: BlobKey, callback: RemoveCallback): void
   }
