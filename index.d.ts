@@ -2,7 +2,7 @@
 
 declare class MemBlobs implements MemBlobs.AbstractBlobStore {
   data: {[key: string]: any}
-  createWriteStream(opts: MemBlobs.BlobKey, callback: MemBlobs.CreateCallback): NodeJS.WriteableStream
+  createWriteStream(opts: MemBlobs.BlobKey, callback: MemBlobs.CreateCallback): NodeJS.WritableStream
   createReadStream(opts: MemBlobs.BlobKey): NodeJS.ReadableStream
   exists(opts: MemBlobs.BlobKey, callback: MemBlobs.ExistsCallback): void
   remove(opts: MemBlobs.BlobKey, callback: MemBlobs.RemoveCallback): void
